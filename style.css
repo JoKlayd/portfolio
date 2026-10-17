@@ -1089,4 +1089,70 @@ body:has(#theme-toggle:checked) .skills-box {
     .about-content h3 {
         font-size: 30px;
     }
+
+    @media (max-width: 600px) {
+
+        html,
+        body {
+            overflow-x: hidden;
+        }
+
+        /* safety net: no sideways scroll */
+
+        /* 1. smaller side padding (top stays big to clear the fixed header) */
+        #skills,
+        .projects,
+        .project-2,
+        #education,
+        .achievements,
+        #experience,
+        #contact-section {
+            padding: 100px 20px 50px;
+        }
+
+        /* 2. one column, allowed to shrink */
+        .edu-grid,
+        .achievement-grid,
+        .experience-grid,
+        .contact-grid {
+            grid-template-columns: 1fr;
+        }
+
+        /* 3. smaller headings and text */
+        .section-title {
+            font-size: 2rem;
+        }
+
+        h2 {
+            font-size: 30px;
+        }
+
+        .achievements p,
+        .projects p,
+        .project-2 p,
+        .experience p {
+            font-size: 16px;
+        }
+
+        /* 4. roomier cards */
+        .edu-card,
+        .achiv-cards,
+        .work-cards,
+        .contact-cards,
+        .skills-box {
+            padding: 20px;
+        }
+
+        #email,
+        #phone,
+        #facebook,
+        #locate {
+            padding: 14px 16px;
+        }
+
+        /* 5. let the badge, year, and image wrap onto new lines */
+        .meta {
+            flex-wrap: wrap;
+        }
+    }
 }
