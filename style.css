@@ -762,20 +762,23 @@ h3.heading {
 }
 
 .theme-btn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 48px;
-    height: 48px;
+    order: 1;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     background-color: whitesmoke;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 22px;
+    font-size: 20px;
     cursor: pointer;
-    z-index: 200;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.theme-btn:hover {
+    transform: scale(1.1);
 }
 
 .theme-btn::before {
@@ -1052,107 +1055,120 @@ body:has(#theme-toggle:checked) .skills-box {
         text-align: center;
         padding: 20px 5%;
     }
-}
 
-/* Small phones */
-@media (max-width: 480px) {
-    .logo {
-        font-size: 18px;
-    }
+    .contact {
+        order: 2;
 
-    .home-content h1 {
-        font-size: 32px;
-    }
-
-    .home-content h3 {
-        font-size: 24px;
-    }
-
-    .btn-1,
-    .btn-2 {
-        padding: 10px 20px;
-        font-size: 16px;
-    }
-
-    .img-box img {
-        max-width: 260px;
-    }
-
-    .about-img {
-        max-width: 240px;
-    }
-
-    .about-content h2 {
-        font-size: 28px;
-    }
-
-    .about-content h3 {
-        font-size: 30px;
-    }
-
-    @media (max-width: 600px) {
-
-        html,
-        body {
-            overflow-x: hidden;
+        .theme-btn {
+            order: 3;
         }
 
-        /* safety net: no sideways scroll */
-
-        /* 1. smaller side padding (top stays big to clear the fixed header) */
-        #skills,
-        .projects,
-        .project-2,
-        #education,
-        .achievements,
-        #experience,
-        #contact-section {
-            padding: 100px 20px 50px;
+        .menu-icon {
+            order: 4;
         }
 
-        /* 2. one column, allowed to shrink */
-        .edu-grid,
-        .achievement-grid,
-        .experience-grid,
-        .contact-grid {
-            grid-template-columns: 1fr;
+    }
+
+    /* Small phones */
+    @media (max-width: 480px) {
+        .logo {
+            font-size: 18px;
         }
 
-        /* 3. smaller headings and text */
-        .section-title {
-            font-size: 2rem;
+        .home-content h1 {
+            font-size: 32px;
         }
 
-        h2 {
-            font-size: 30px;
+        .home-content h3 {
+            font-size: 24px;
         }
 
-        .achievements p,
-        .projects p,
-        .project-2 p,
-        .experience p {
+        .btn-1,
+        .btn-2 {
+            padding: 10px 20px;
             font-size: 16px;
         }
 
-        /* 4. roomier cards */
-        .edu-card,
-        .achiv-cards,
-        .work-cards,
-        .contact-cards,
-        .skills-box {
-            padding: 20px;
+        .img-box img {
+            max-width: 260px;
         }
 
-        #email,
-        #phone,
-        #facebook,
-        #locate {
-            padding: 14px 16px;
+        .about-img {
+            max-width: 240px;
         }
 
-        /* 5. let the badge, year, and image wrap onto new lines */
-        .meta {
-            flex-wrap: wrap;
+        .about-content h2 {
+            font-size: 28px;
+        }
+
+        .about-content h3 {
+            font-size: 30px;
+        }
+
+        @media (max-width: 600px) {
+
+            html,
+            body {
+                overflow-x: hidden;
+            }
+
+            /* safety net: no sideways scroll */
+
+            /* 1. smaller side padding (top stays big to clear the fixed header) */
+            #skills,
+            .projects,
+            .project-2,
+            #education,
+            .achievements,
+            #experience,
+            #contact-section {
+                padding: 100px 20px 50px;
+            }
+
+            /* 2. one column, allowed to shrink */
+            .edu-grid,
+            .achievement-grid,
+            .experience-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            /* 3. smaller headings and text */
+            .section-title {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 30px;
+            }
+
+            .achievements p,
+            .projects p,
+            .project-2 p,
+            .experience p {
+                font-size: 16px;
+            }
+
+            /* 4. roomier cards */
+            .edu-card,
+            .achiv-cards,
+            .work-cards,
+            .contact-cards,
+            .skills-box {
+                padding: 20px;
+            }
+
+            #email,
+            #phone,
+            #facebook,
+            #locate {
+                padding: 14px 16px;
+            }
+
+            /* 5. let the badge, year, and image wrap onto new lines */
+            .meta {
+                flex-wrap: wrap;
+            }
         }
     }
 }
